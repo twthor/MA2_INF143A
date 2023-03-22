@@ -3,12 +3,13 @@ from cipher import read_file, write_file, bits_to_bytes, bytes_to_bits
 import sys
 def main():
     # setup for elgamal
-    setup()
+    setup_elgamal()
 
 
 
 
-def setup():
+
+def setup_elgamal():
     global parameters
     parameters = sys.argv[1]
     parameters = read_file(f"sample_data/{parameters}").decode("utf-8")
