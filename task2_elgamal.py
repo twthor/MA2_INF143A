@@ -3,6 +3,7 @@ from cipher import read_file, write_file, bits_to_bytes, bytes_to_bits
 import math, random, sys
 
 def pick_ephemeral_key(public_key: int) -> int:
+    """Verification of the elgamal digital signature scheme"""
     temp_key = random.randint(1, public_key-2)
     if math.gcd(temp_key, public_key-1) == 1:
         return temp_key
@@ -38,9 +39,6 @@ def main():
 
     test_output = read_file("task2_elgamal_output.txt").decode("utf-8")
     print(test_output)
-
-    sample_output = read_file("sample_data/elg_output").decode("utf-8")
-    print(sample_output)
 
     print(verification(beta, r, s, p, generator, message))
 
