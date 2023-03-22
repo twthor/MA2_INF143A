@@ -27,15 +27,18 @@ def main():
     eph_inverse = int(pow(ephemeral_key, -1, public_key-1))
     s = ((message - (private_key*r) % public_key-1) * eph_inverse) % (public_key-1)
 
+    # formatting the output
     output_message = f"{r}\n{s}"
-    output_message = ''.join(format(ord(x), 'b') for x in output_message)
-    print(type(output_message)) # str
-    write_file(f"sample_data/{out_file}", bits_to_bytes(output_message))
 
+    with open(f"{out_file}.txt", "wb") as f:
+       f.write(output_message.encode())
 
-    test_output = read_file("sample_data/test_elg_out").decode("utf-8")
+    test_output = read_file("task2_elgamal_output.txt").decode("utf-8")
     print(test_output)
-    # output file skal ha r på første linje, så s på andre linje.
+
+    sample_output = read_file("sample_data/elg_output").decode("utf-8")
+    print(sample_output)
+
 
 def setup_arguments():
     global parameters
