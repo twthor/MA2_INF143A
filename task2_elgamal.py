@@ -27,6 +27,7 @@ def main():
 
     # compute r:
     r = pow(generator, ephemeral_key, p)
+
     # compute s:
     eph_inverse = pow(ephemeral_key, -1, p-1)
     s = ((message - (private_key*r)) * eph_inverse) % (p-1)
