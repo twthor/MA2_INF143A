@@ -31,6 +31,7 @@ def main():
         num_Fx = int(line[8:14], 2)
         dict_ff[num_x] = num_Fx
 
+    # Differential uniformity printed to the terminal. No files. Referring to discord messages from Nikolay saying that its okey.
     print(compute_du(dict_ff))
 
 

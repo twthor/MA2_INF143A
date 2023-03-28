@@ -38,8 +38,6 @@ def main():
     with open(f"{out_file}.txt", "wb") as f:
        f.write(output_message.encode())
 
-    #test_output = read_file("task2_elgamal_output.txt").decode("utf-8")
-
     print(verification(beta, r, s, p, generator, message))
 
 
