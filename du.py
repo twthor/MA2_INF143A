@@ -2,6 +2,8 @@
 # Program to compute differential uniformity of a given (n,n)-function.
 import sys
 
+"""Task 3 - Differential uniformity"""
+
 def read_lookup_table(lookup_table):
     with open(f"sample_data/{lookup_table}", "r") as file:
         return file.readlines()
@@ -36,4 +38,5 @@ def main():
 
 
 if __name__=="__main__":
+    # How to run: python du.py lookup_table
     main()

@@ -2,6 +2,8 @@
 from cipher import read_file, write_file, bits_to_bytes, bytes_to_bits
 import math, random, sys
 
+"""Task 2 - Elgamal digital signature scheme"""
+
 def pick_ephemeral_key(public_key: int) -> int:
     """Verification of the elgamal digital signature scheme"""
     temp_key = random.randint(1, public_key-2)
@@ -55,4 +57,5 @@ def setup_arguments():
     out_file = sys.argv[4]
 
 if __name__=="__main__":
+    # how to run: python elgamal.py parameters private_key message output
     main()
